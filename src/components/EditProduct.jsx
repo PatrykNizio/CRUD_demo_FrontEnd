@@ -102,21 +102,24 @@ const EditProduct = () => {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="keyword">Keywords:</label>
+                    <label htmlFor="keyword">Keywords</label>
                     <Select
                         isMulti
                         id="keyword"
                         options={keywordOptions}
                         value={selectedKeywords}  
                         onChange={(selectedOptions) => setSelectedKeywords(selectedOptions)}  
+                        className="react-select-container"
+                        classNamePrefix="react-select"
                     />
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="bidAmount">Bid Amount:</label>
+                    <label htmlFor="bidAmount">Bid Amount</label>
                     <input
                         type="number"
                         id="bidAmount"
+                        min={5}
                         value={bidAmount}
                         onChange={(e) => setBidAmount(e.target.value)}
                         required
@@ -124,7 +127,7 @@ const EditProduct = () => {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="status">Status:</label>
+                    <label htmlFor="status">Status</label>
                     <select
                         id="status"
                         value={status}
@@ -137,7 +140,7 @@ const EditProduct = () => {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="companyId">campaign</label>
+                    <label htmlFor="companyId">Campaign</label>
                     <select
                         id="companyId"
                         value={companyId}
