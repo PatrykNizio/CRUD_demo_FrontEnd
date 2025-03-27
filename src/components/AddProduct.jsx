@@ -30,7 +30,7 @@ const AddProduct = () => {
     }));
 
     useEffect(() => {
-        axios.get('http://152.70.28.100:8080/api/companies')
+        axios.get('https://152.70.28.100:8080/api/companies')
             .then(response => setCompanies(response.data))
             .catch(error => console.error('Get error:', error));
     }, []);
@@ -53,7 +53,7 @@ const AddProduct = () => {
             }
         };
 
-        axios.post('http://152.70.28.100:8080/api/products', productData)
+        axios.post('https://152.70.28.100:8080/api/products', productData)
             .then(() => navigate('/'))
             .catch(error => console.error('Post error:', error));
     };

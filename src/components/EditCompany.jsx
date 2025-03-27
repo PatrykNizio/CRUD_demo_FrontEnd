@@ -14,7 +14,7 @@ const EditCompany = () => {
     });
 
     useEffect(() => {
-        axios.get(`http://152.70.28.100:8080/api/companies/${id}`)
+        axios.get(`https://152.70.28.100:8080/api/companies/${id}`)
             .then(response => {
                 setCompany(response.data);
             })
@@ -34,7 +34,7 @@ const EditCompany = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        axios.put(`http://152.70.28.100:8080/api/companies/${id}`, company)
+        axios.put(`https://152.70.28.100:8080/api/companies/${id}`, company)
             .then(() => {
                 navigate('/');
             })

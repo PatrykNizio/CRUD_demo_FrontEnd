@@ -7,7 +7,7 @@ const Dashboard = () => {
     const [companies, setCompanies] = useState([]);
 
     useEffect(() => {
-        axios.get('http://152.70.28.100:8080/api/companies')
+        axios.get('https://152.70.28.100:8080/api/companies')
             .then(response => {
                 setCompanies(response.data);
             })
@@ -19,7 +19,7 @@ const Dashboard = () => {
     const handleDeleteCompany = (id) => {
         const confirmDelete = window.confirm('Are you sure you want to remove this Campaign?');
         if (confirmDelete) {
-            axios.delete(`http://152.70.28.100:8080/api/companies/${id}`)
+            axios.delete(`https://152.70.28.100:8080/api/companies/${id}`)
                 .then(response => {
                     setCompanies(companies.filter(company => company.companyId !== id));
                 })
@@ -40,7 +40,7 @@ const Dashboard = () => {
                 }
             };
 
-            axios.delete(`http://152.70.28.100:8080/api/products/${productId}`, { data: productData })
+            axios.delete(`https://152.70.28.100:8080/api/products/${productId}`, { data: productData })
                 .then(response => {
                     setCompanies(companies.map(company => {
                         if (company.companyId === companyId) {
