@@ -1,0 +1,135 @@
+.form-container {
+  width: 500px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form h1 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #444;
+}
+
+input[type="text"],
+input[type="number"],
+.styled-select {
+  width: 100%;
+  padding: 12px 14px; 
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+input:focus,
+.styled-select:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.submit-btn,
+.back-btn {
+  padding: 12px 18px; 
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.submit-btn {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.submit-btn:hover {
+  background-color: #2980b9;
+}
+
+.back-btn {
+  background-color: #ccc;
+  color: #333;
+}
+
+.back-btn:hover {
+  background-color: #aaa;
+}
+
+.react-select__control {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  min-height: 40px;
+  padding: 5px;
+  font-size: 14px;
+  box-shadow: none;
+}
+
+.react-select__control--is-focused {
+  border-color: #3498db;
+  box-shadow: 0 0 0 1px #3498db;
+}
+
+.react-select__menu {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  z-index: 1000; /* Ensure the dropdown is visible above other content */
+}
+
+.react-select__option {
+  padding: 10px;
+  cursor: pointer;
+  color: #333;
+}
+
+.react-select__option--is-selected {
+  background-color: #3498db;
+  color: white;
+}
+
+.react-select__option--is-focused {
+  background-color: #e3f1fc;
+}
+
+.react-select__multi-value {
+  background-color: #3498db;
+  color: white;
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+.react-select__multi-value__label {
+  color: white;
+}
+
+.react-select__multi-value__remove {
+  color: white;
+  cursor: pointer;
+}
+
+.react-select__multi-value__remove:hover {
+  background-color: #2980b9;
+  color: white;
+}

@@ -1,0 +1,175 @@
+/* App CSS */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Logo */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Card styles */
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Global styles (added) */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+}
+
+/* Container styles */
+div {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Table styles (added) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #3498db;
+  color: white;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Button styles (added) */
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Action buttons (Edit, Delete) (added) */
+button:first-child {
+  background-color: #f39c12;
+  color: white;
+}
+
+button:first-child:hover {
+  background-color: #e67e22;
+}
+
+button:nth-child(2) {
+  background-color: #e74c3c;
+  color: white;
+}
+
+button:nth-child(2):hover {
+  background-color: #c0392b;
+}
+
+/* Product & Campaign section headers (added) */
+h3 {
+  margin: 20px 0 10px;
+  color: #2c3e50;
+}
+
+/* Add campaign/product section (added) */
+div > div {
+  margin-top: 30px;
+  text-align: center;
+}
+
+div > div a {
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+button.add {
+  background-color: #2ecc71;
+  color: white;
+}
+
+button.add:hover {
+  background-color: #27ae60;
+}
+
+p {
+  text-align: center;
+  color: #7f8c8d;
+}
+
+/* Mobile responsiveness (added) */
+@media (max-width: 768px) {
+  table {
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 8px 10px;
+  }
+
+  button {
+    font-size: 12px;
+  }
+
+  div {
+    padding: 10px;
+  }
+}
