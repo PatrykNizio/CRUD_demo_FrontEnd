@@ -33,7 +33,14 @@ const Dashboard = () => {
     const handleDeleteProduct = (companyId, productId) => {
         const confirmDelete = window.confirm('Are you sure you want to remove this product?');
         if (confirmDelete) {
-            axios.delete(`http://localhost:8080/api/companies/${companyId}/products/${productId}`)
+            const productData = {
+                productId: productId,
+                company: {
+                    companyId: companyId
+                }
+            };
+
+            axios.delete(`http://localhost:8080/api/products/${productId}`, { data: productData })
                 .then(response => {
                     setCompanies(companies.map(company => {
                         if (company.companyId === companyId) {
@@ -46,7 +53,8 @@ const Dashboard = () => {
                     }));
                 })
                 .catch(error => {
-                    console.error('Delate error:', error);
+                    console.error('Delete error:', error);
+                    alert('Failed to delete product. Please try again.');
                 });
         }
     };

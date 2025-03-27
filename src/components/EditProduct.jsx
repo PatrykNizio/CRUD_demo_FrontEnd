@@ -42,15 +42,28 @@ const EditProduct = () => {
         if (productId) {
             axios.get(`http://localhost:8080/api/products/${productId}`)
                 .then(response => {
-                    setProductData(response.data);
-                    setProductName(response.data.productName);
-                    setBidAmount(response.data.bidAmount);
-                    setStatus(response.data.status);
-                    setCompanyId(response.data.company.companyId);
-                    setSelectedKeywords(JSON.parse(response.data.keyword));
+                    const data = response.data;
+                    setProductData(data);
+                    setProductName(data.productName);
+                    setBidAmount(data.bidAmount);
+                    setStatus(data.status);
+                    if (data.company && data.company.companyId) {
+                        setCompanyId(data.company.companyId);
+                    }
+                    try {
+                        const parsedKeywords = JSON.parse(data.keyword);
+                        // Convert string keywords to proper format for react-select
+                        setSelectedKeywords(parsedKeywords.map(keyword => ({
+                            value: keyword,
+                            label: keyword
+                        })));
+                    } catch (e) {
+                        console.error('Error parsing keywords:', e);
+                        setSelectedKeywords([]);
+                    }
                 })
                 .catch(error => {
-                    console.warn('Parsing unresolved');
+                    console.error('Error fetching product:', error);
                 });
         } else {
             console.error('ID error');
