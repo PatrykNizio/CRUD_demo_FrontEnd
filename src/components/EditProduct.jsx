@@ -29,7 +29,7 @@ const EditProduct = () => {
     const keywordOptions = keywords.map(keyword => ({ value: keyword, label: keyword }));
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/companies')
+        axios.get('http://152.70.28.100:8080/api/companies')
             .then(response => {
                 setCompanies(response.data);
             })
@@ -40,7 +40,7 @@ const EditProduct = () => {
 
     useEffect(() => {
         if (productId) {
-            axios.get(`http://localhost:8080/api/products/${productId}`)
+            axios.get(`http://152.70.28.100:8080/api/products/${productId}`)
                 .then(response => {
                     const data = response.data;
                     setProductData(data);
@@ -84,7 +84,7 @@ const EditProduct = () => {
         };
 
         if (productId) {
-            axios.put(`http://localhost:8080/api/products/${productId}`, productData)
+            axios.put(`http://152.70.28.100:8080/api/products/${productId}`, productData)
                 .then(response => {
                     console.log('PUT succeeded:', response.data);
                     navigate('/'); 

@@ -27,7 +27,7 @@ const AddCompany = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:8080/api/companies', newCompany);
+      const response = await axios.post('http://152.70.28.100:8080/api/companies', newCompany);
       navigate('/'); 
     } catch (error) {
       console.error('Błąd dodawania firmy:', error);
