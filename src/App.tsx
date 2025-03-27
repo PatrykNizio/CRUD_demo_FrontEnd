@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Dashboard from './components/Dashboard';
-import AddProduct from './components/AddProduct';
-import AddCompany from './components/AddCompany'; 
+import Dashboard from './components/Dashboard.jsx';
+import AddProduct from './components/AddProduct.jsx';
+import AddCompany from './components/AddCompany.jsx'; 
 import EditCompany from './components/EditCompany.jsx';
 import EditProduct from './components/EditProduct.jsx';
 
