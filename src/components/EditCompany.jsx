@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axiosInstance from '../axiosConfig';
 import { useNavigate, useParams } from 'react-router-dom';
 import './universal.css';
 
@@ -14,7 +14,7 @@ const EditCompany = () => {
     });
 
     useEffect(() => {
-        axios.get(`https://152.70.28.100:8080/api/companies/${id}`)
+        axiosInstance.get(`/api/companies/${id}`)
             .then(response => {
                 setCompany(response.data);
             })
@@ -34,7 +34,7 @@ const EditCompany = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        axios.put(`https://152.70.28.100:8080/api/companies/${id}`, company)
+        axiosInstance.put(`/api/companies/${id}`, company)
             .then(() => {
                 navigate('/');
             })

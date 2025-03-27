@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import axiosInstance from '../axiosConfig';
 import { Link } from 'react-router-dom';
 import './Dashboard.css';
 
@@ -7,7 +7,7 @@ const Dashboard = () => {
     const [companies, setCompanies] = useState([]);
 
     useEffect(() => {
-        axios.get('https://152.70.28.100:8080/api/companies')
+        axiosInstance.get('/api/companies')
             .then(response => {
                 setCompanies(response.data);
             })
@@ -19,12 +19,12 @@ const Dashboard = () => {
     const handleDeleteCompany = (id) => {
         const confirmDelete = window.confirm('Are you sure you want to remove this Campaign?');
         if (confirmDelete) {
-            axios.delete(`https://152.70.28.100:8080/api/companies/${id}`)
+            axiosInstance.delete(`/api/companies/${id}`)
                 .then(response => {
                     setCompanies(companies.filter(company => company.companyId !== id));
                 })
                 .catch(error => {
-                    console.error('Delate error:', error);
+                    console.error('Delete error:', error);
                 });
         }
     };
@@ -40,7 +40,7 @@ const Dashboard = () => {
                 }
             };
 
-            axios.delete(`https://152.70.28.100:8080/api/products/${productId}`, { data: productData })
+            axiosInstance.delete(`/api/products/${productId}`, { data: productData })
                 .then(response => {
                     setCompanies(companies.map(company => {
                         if (company.companyId === companyId) {

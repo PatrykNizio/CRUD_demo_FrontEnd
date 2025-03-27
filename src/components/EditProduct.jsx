@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axiosInstance from '../axiosConfig';
 import { useParams, useNavigate } from 'react-router-dom';
 import Select from 'react-select'; 
 import './universal.css';  // Zaimportowanie globalnych styli
@@ -29,7 +29,7 @@ const EditProduct = () => {
     const keywordOptions = keywords.map(keyword => ({ value: keyword, label: keyword }));
 
     useEffect(() => {
-        axios.get('https://152.70.28.100:8080/api/companies')
+        axiosInstance.get('/api/companies')
             .then(response => {
                 setCompanies(response.data);
             })
@@ -40,7 +40,7 @@ const EditProduct = () => {
 
     useEffect(() => {
         if (productId) {
-            axios.get(`https://152.70.28.100:8080/api/products/${productId}`)
+            axiosInstance.get(`/api/products/${productId}`)
                 .then(response => {
                     const data = response.data;
                     setProductData(data);
@@ -84,7 +84,7 @@ const EditProduct = () => {
         };
 
         if (productId) {
-            axios.put(`https://152.70.28.100:8080/api/products/${productId}`, productData)
+            axiosInstance.put(`/api/products/${productId}`, productData)
                 .then(response => {
                     console.log('PUT succeeded:', response.data);
                     navigate('/'); 

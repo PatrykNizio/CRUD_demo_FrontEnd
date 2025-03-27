@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import axiosInstance from '../axiosConfig';
 import { useNavigate } from 'react-router-dom';
 import './universal.css'; 
 
@@ -27,10 +27,10 @@ const AddCompany = () => {
     };
 
     try {
-      const response = await axios.post('https://152.70.28.100:8080/api/companies', newCompany);
+      const response = await axiosInstance.post('/api/companies', newCompany);
       navigate('/'); 
     } catch (error) {
-      console.error('Błąd dodawania firmy:', error);
+      console.error('Error adding company:', error);
     }
   };
 

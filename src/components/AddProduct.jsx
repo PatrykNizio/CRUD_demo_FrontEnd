@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axiosInstance from '../axiosConfig';
 import { useNavigate } from 'react-router-dom';
 import Select from 'react-select';
 import './universal.css';
@@ -30,7 +30,7 @@ const AddProduct = () => {
     }));
 
     useEffect(() => {
-        axios.get('https://152.70.28.100:8080/api/companies')
+        axiosInstance.get('/api/companies')
             .then(response => setCompanies(response.data))
             .catch(error => console.error('Get error:', error));
     }, []);
@@ -53,7 +53,7 @@ const AddProduct = () => {
             }
         };
 
-        axios.post('https://152.70.28.100:8080/api/products', productData)
+        axiosInstance.post('/api/products', productData)
             .then(() => navigate('/'))
             .catch(error => console.error('Post error:', error));
     };
